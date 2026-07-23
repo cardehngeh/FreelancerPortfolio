@@ -50,6 +50,7 @@ img {
 }
 
 .header-inner {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -87,6 +88,42 @@ img {
 .main-nav a:hover,
 .contact-list a:hover {
   color: var(--text);
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  background: transparent;
+  border: 1.5px solid var(--border-strong);
+  border-radius: 0.75rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-toggle-bar {
+  width: 18px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 .cta-button,
@@ -651,7 +688,7 @@ img {
 
 .review-note {
   margin-top: 1.5rem;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 /* Contact */
@@ -830,17 +867,51 @@ img {
 }
 
 @media (max-width: 860px) {
+  .nav-toggle {
+    display: flex;
+  }
+
   .main-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 0 0 1rem 1rem;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: max-height 0.25s ease, opacity 0.2s ease;
+  }
+
+  .main-nav.is-open {
+    max-height: 320px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .main-nav a {
+    padding: 0.9rem 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .main-nav a:first-child {
+    border-top: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .header-inner .cta-button {
     display: none;
   }
 }
 
 @media (max-width: 640px) {
-  .header-inner {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
   .hero-stats {
     grid-template-columns: 1fr 1fr;
   }
