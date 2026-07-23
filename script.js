@@ -23,6 +23,21 @@ const sampleReviews = [
   },
   {
     name: 'Verified Upwork Client — Part-Time Client Success Representative',
+    text: 'Highly recommend Charles! Charles is a great freelancer who is smart and responsive.',
+    rating: 5,
+  },
+  {
+    name: 'Verified Upwork Client — B2B Email Lead Virtual Assistant',
+    text: "It was great working with Charles. I'd recommend him to anyone looking for reliable support.",
+    rating: 5,
+  },
+  {
+    name: 'Verified Upwork Client — WordPress Post Cleanup',
+    text: 'Fluent, technically skilled and amazing to work with. Definitely recommend!',
+    rating: 5,
+  },
+  {
+    name: 'Verified Upwork Client — Part-Time Client Success Representative',
     text: 'Charles is a good problem solver who speaks great English.',
     rating: 5,
   },
@@ -50,13 +65,23 @@ function renderCards(reviews) {
 async function loadReviews() {
   try {
     const response = await fetch(upworkReviewsEndpoint);
-    if (!response.ok) throw new Error('Failed to fetch reviews');
+    if (!response.ok) throw new Error('Reviews API not available');
     const data = await response.json();
     const reviews = data.reviews || data;
     renderCards(Array.isArray(reviews) ? reviews.slice(0, 10) : sampleReviews);
     return;
   } catch (error) {
-    console.warn('Unable to load Upwork reviews:', error);
+    console.warn('Reviews API unavailable, falling back to static file:', error);
+  }
+
+  try {
+    const response = await fetch('upwork-reviews.json');
+    if (!response.ok) throw new Error('Static reviews file not available');
+    const reviews = await response.json();
+    renderCards(Array.isArray(reviews) ? reviews.slice(0, 10) : sampleReviews);
+    return;
+  } catch (error) {
+    console.warn('Unable to load static reviews file, using built-in sample reviews:', error);
     renderCards(sampleReviews);
   }
 }
