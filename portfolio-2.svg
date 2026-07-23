@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 240">
+  <rect width="360" height="240" rx="24" fill="#141a29" />
+
+  <rect x="44" y="44" width="110" height="140" rx="10" fill="#1b2336" stroke="#232b40" stroke-width="2" />
+  <path d="M124 44 L154 44 L154 74 Z" fill="#232b40" />
+  <rect x="58" y="70" width="82" height="8" rx="4" fill="#232b40" />
+  <rect x="58" y="86" width="70" height="8" rx="4" fill="#232b40" />
+  <rect x="58" y="102" width="76" height="8" rx="4" fill="#232b40" />
+  <rect x="58" y="118" width="60" height="8" rx="4" fill="#232b40" />
+  <rect x="58" y="134" width="68" height="8" rx="4" fill="#232b40" />
+  <rect x="44" y="152" width="52" height="20" rx="6" fill="#ff7a3d" />
+  <text x="70" y="166" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="11" fill="#1a0e06">PDF</text>
+
+  <path d="M172 114 L204 114 M194 104 L206 114 L194 124" stroke="#ffb98a" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+
+  <rect x="222" y="44" width="110" height="140" rx="10" fill="#1b2336" stroke="#232b40" stroke-width="2" />
+  <path d="M222 54 a10 10 0 0 1 10 -10 h90 a10 10 0 0 1 10 10 v12 h-110 Z" fill="#ff7a3d" />
+  <line x1="257" y1="66" x2="257" y2="184" stroke="#232b40" stroke-width="2" />
+  <line x1="292" y1="66" x2="292" y2="184" stroke="#232b40" stroke-width="2" />
+  <line x1="222" y1="88" x2="332" y2="88" stroke="#232b40" stroke-width="2" />
+  <line x1="222" y1="110" x2="332" y2="110" stroke="#232b40" stroke-width="2" />
+  <line x1="222" y1="132" x2="332" y2="132" stroke="#232b40" stroke-width="2" />
+  <line x1="222" y1="154" x2="332" y2="154" stroke="#232b40" stroke-width="2" />
+  <line x1="222" y1="176" x2="332" y2="176" stroke="#232b40" stroke-width="2" />
+  <rect x="257" y="110" width="35" height="22" fill="#ff7a3d" opacity="0.28" />
+</svg>
