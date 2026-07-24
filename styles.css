@@ -90,6 +90,10 @@ img {
   color: var(--text);
 }
 
+.nav-book-btn {
+  display: none;
+}
+
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -890,7 +894,7 @@ img {
   }
 
   .main-nav.is-open {
-    max-height: 320px;
+    max-height: 380px;
     opacity: 1;
     visibility: visible;
   }
@@ -909,9 +913,31 @@ img {
   .header-inner .cta-button {
     display: none;
   }
+
+  .main-nav a.nav-book-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.75rem 1.5rem;
+    padding: 0.85rem 1.4rem;
+    border-radius: 999px;
+    background: var(--accent);
+    color: #1a0e06;
+    font-weight: 600;
+    border-top: none;
+  }
+
+  .main-nav a.nav-book-btn:hover {
+    background: var(--accent-light);
+    color: #1a0e06;
+  }
 }
 
 @media (max-width: 640px) {
+  .nav-work-link {
+    display: none;
+  }
+
   .hero-stats {
     grid-template-columns: 1fr 1fr;
   }
