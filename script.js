@@ -197,7 +197,7 @@ if (contactForm) {
     const email = formData.get('email');
     const message = formData.get('message');
     const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0A${message}`;
-    const mailtoUrl = `mailto:contact@bryantkadenge.com?subject=Website%20Inquiry&body=${body}`;
+    const mailtoUrl = `mailto:hello@charles-k.me?subject=Website%20Inquiry&body=${body}`;
 
     showContactFeedback('Opening your email client so you can send this message instantly.');
     window.location.href = mailtoUrl;
